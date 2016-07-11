@@ -1,0 +1,136 @@
+<ion-pane id="home" ng-controller="homeController">
+  <div class="bar bar-header bar-assertive home-header">
+    <i class="i icon ion-navicon-round"></i>
+    <lable class="item item-input home-lable padding">
+      <i class="icon ion-ios-search padding"></i>
+      <p>不止5折实惠到爆</p>
+    </lable>
+    <i class="i icon ion-chatbox-working"></i>
+    <i class="i icon ion-ios-cart"></i>
+  </div>
+  <i class="fix icon ion-arrow-up-a padding" ng-click="scrollTop()"></i>
+
+  <ion-content on-scroll="sss()" class="hi has-header" scrollbar-y="false">
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <ion-slide-box class="sss" slide-interval=2000 auto-play="true" does-continue="true">
+      <ion-slide class="hs" ng-repeat="i in cc">
+        <!-- <img src="../img/home1.jpg" /> -->
+        <img ng-src={{i.img}}>
+      </ion-slide>
+      <!-- <ion-slide class="hs">
+        <img src="../img/home2.jpg" />
+      </ion-slide>
+      <ion-slide class="hs">
+        <img src="../img/home1.jpg" />
+      </ion-slide>
+      <ion-slide class="hs">
+        <img src="../img/home2.jpg" />
+      </ion-slide> -->
+    </ion-slide-box>
+
+    <ion-scroll class="hl" direction=x scrollbar-x="false" zooming="true">
+      <ul>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+        <li>
+          <img src="../img/home3.jpg" />
+          <p>9块9</p>
+        </li>
+      </ul>
+    </ion-scroll>
+
+    <div class="bubai"></div>
+    <div class="time">
+      <img src="../img/home4.jpg" />
+      <div class="timed">
+        <ul class="ul1">
+          <li><img src="../img/home5.jpg" /></li>
+          <li><img src="../img/home6.jpg" /></li>
+        </ul>
+        <ul class="ul2">
+          <li><img src="../img/home5.jpg" /></li>
+          <li><img src="../img/home6.jpg" /></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bubai"></div>
+    <div class="ban">
+      <img src="../img/hb.jpg" alt="" />
+    </div>
+    <div class="bubai"></div>
+
+    <ul class="pic">
+      <li><img src="../img/girl.jpg" /></li>
+      <li><img src="../img/boy.jpg" /></li>
+      <li><img src="../img/girl.jpg" /></li>
+      <li><img src="../img/boy.jpg" /></li>
+    </ul>
+    <div class="bubai"></div>
+
+    <ul class="yifu">
+      <li><img src="../img/jiezhi.jpg" /></li>
+      <li><img src="../img/yifu-1.jpg" /></li>
+      <li><img src="../img/jiezhi.jpg" /></li>
+      <li><img src="../img/yifu-1.jpg" /></li>
+    </ul>
+    <ul class="yifu">
+      <li><img src="../img/jiezhi.jpg" /></li>
+      <li><img src="../img/yifu-1.jpg" /></li>
+      <li><img src="../img/jiezhi.jpg" /></li>
+      <li><img src="../img/yifu-1.jpg" /></li>
+    </ul>
+    <div class="bubai"></div>
+    <!-- <ion-list>
+      <ion-item ng-repeat="item in items">
+        <h6>{{item.title}}</h6>
+        <i><img src="{{item.img}}"/></i>
+      </ion-item>
+    </ion-list> -->
+    <div class="list">
+      <ul ng-repeat="item in items">
+        <li class="title">
+          <i><b>{{item.gaoliang}}</b>{{item.title}}</i>
+          <i class="er">{{item.tishi}}</i>
+        </li>
+        <li><img ng-src={{item.img}}></li>
+      </ul>
+    </div>
+
+  </ion-content>
+
+</ion-pane>
