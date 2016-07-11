@@ -1,1 +1,55 @@
-弟弟顶顶顶顶顶
+
+<ion-pane class="list-content" >
+  <div class="bar bar-header list-top padding-left bar-light">
+    <label class="item item-input list-button">
+      <i class="icon ion-ios-search padding-right"></i>
+      <p>不止5折实惠到爆</p>
+    </label>
+    <button class="button-icon ion-ios-chatbubble-outline"></button>
+    <button class="button-icon ion-ios-cart-outline "></button>
+  </div>
+  <ion-content class="has-header" scrollbar-y="false"  ng-controller="listController">
+    <div class="allList padding-top">
+      <h5 class="allList-top">全部分类</h5>
+      <ul class="list-list1 padding" ng-repeat="item in items" >
+        <li class=""  >
+          <img src="{{item.img}}" alt="" />
+          <h4>{{item.title}}</h4>
+          <p>{{item.description}}</p>
+        </li>
+        <li class="" >
+          <img src="{{item.img}}" alt="" />
+          <h4>{{item.title}}</h4>
+          <p>{{item.description}}</p>
+        </li>
+        <li class="" >
+          <img src="{{item.img}}" alt="" />
+          <h4>{{item.title}}</h4>
+          <p>{{item.description}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="list-like padding-top">
+      <h5 class="allList-top">猜你喜欢</h5>
+      <ul class="list-list2">
+        <li ng-repeat="item in items2">
+          <div class="like-img"  >
+            <div class="img-left" >
+              <img src="{{item.src1}}"/>
+              <p>{{item.p1}}</p>
+              <b>{{item.b1}}</b>
+              <span>{{item.span1}}</span>
+            </div>
+            <div class="img-left">
+              <img src="{{item.src1}}"/>
+              <p>{{item.p1}}</p>
+              <b>{{item.b1}}</b>
+              <span>{{item.span1}}</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </ion-content>
+</ion-pane>
