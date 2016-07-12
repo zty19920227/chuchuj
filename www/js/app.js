@@ -59,7 +59,7 @@ angular.module('starter', ['ionic','home.controller','list.controller','about.co
     views: {
       'list-tab': {
         templateUrl: './tpls/list.html',
-        // controller: 'listController'
+        controller: 'listController'
       }
     }
   })

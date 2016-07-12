@@ -1,5 +1,5 @@
 angular.module('home.controller', [])
-  .controller('homeController', ['$scope','$ionicScrollDelegate' ,function($scope,$ionicScrollDelegate,shouldAnimate) {
+  .controller('homeController', ['$scope','$ionicScrollDelegate','$http','$timeout' ,'$ionicSlideBoxDelegate',function($scope,$ionicScrollDelegate,$http,$timeout,$ionicSlideBoxDelegate,shouldAnimate) {
     var items = [{
       title: '今日特卖',
       tishi: '9点更新',
@@ -46,6 +46,11 @@ angular.module('home.controller', [])
     }, {
       img: '../img/home2.jpg'
     }]
+    var xx='../img/home4.jpg';
+    $scope.items = items;
+    $scope.cc = cc;
+    $scope.xx = xx;
+
     $scope.sss =function(){
       // console.log($ionicScrollDelegate.getScrollPosition().top);
       if($ionicScrollDelegate.getScrollPosition().top>100){
@@ -56,10 +61,47 @@ angular.module('home.controller', [])
     }
 
     $scope.scrollTop = function() {
-      if($ionicScrollDelegate.getScrollPosition().top>100){
+  if($ionicScrollDelegate.getScrollPosition().top>100){
         $ionicScrollDelegate.scrollTo(0, 0,[shouldAnimate]);//第三个参数也可以是true
       }
   };
-    $scope.items = items;
-    $scope.cc = cc;
+
+    $scope.doRefresh=function(){
+      $http.get('./mock/home1.json')
+        .success(function(res){
+          $scope.cc=res;
+          // $scope.cc=$scope.cc.concat(res);
+          // $scope.cc=$scope.cc.concat(res.img);
+        })
+        $http.get('./mock/pic.json')
+          .success(function(res){
+            $scope.xx=res.img;
+            // console.log(res.img);
+          })
+
+    //     .finally(function() {
+    //    // 停止广播ion-refresher
+    //    $scope.$broadcast('scroll.refreshComplete');
+    //  });
+    $timeout(function () {
+      $scope.$broadcast('scroll.refreshComplete');
+      $ionicSlideBoxDelegate.$getByHandle('zz').update();
+    },20)
+    }
+
+
+    $scope.loadMore=function () {
+      $timeout(function () {
+        $http.get('./mock/home.json')
+        .success(function (res) {
+          $scope.items=$scope.items.concat(res);
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+        })
+        $scope.$on('stateChangeSuccess', function() {
+    $scope.loadMore();
+  });
+      },3000)
+
+    }
+
   }])

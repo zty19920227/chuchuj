@@ -16,7 +16,8 @@
       on-refresh="doRefresh()">
     </ion-refresher>
 
-    <ion-slide-box class="sss" slide-interval=2000 auto-play="true" does-continue="true">
+
+    <ion-slide-box class="sss" slide-interval=2000 auto-play="true" does-continue="true" delegate-handle="zz">
       <ion-slide class="hs" ng-repeat="i in cc">
         <!-- <img src="../img/home1.jpg" /> -->
         <img ng-src={{i.img}}>
@@ -32,7 +33,7 @@
       </ion-slide> -->
     </ion-slide-box>
 
-    <ion-scroll class="hl" direction=x scrollbar-x="false" zooming="true">
+    <ion-scroll class="hl" direction=x scrollbar-x="false">
       <ul>
         <li>
           <img src="../img/home3.jpg" />
@@ -75,7 +76,7 @@
 
     <div class="bubai"></div>
     <div class="time">
-      <img src="../img/home4.jpg" />
+      <img ng-src={{xx}} />
       <div class="timed">
         <ul class="ul1">
           <li><img src="../img/home5.jpg" /></li>
@@ -130,6 +131,12 @@
         <li><img ng-src={{item.img}}></li>
       </ul>
     </div>
+  <!-- 上拉加载 -->
+  <ion-infinite-scroll
+    spinner="circles"
+    on-infinite="loadMore()"
+    distance="1%">
+  </ion-infinite-scroll>
 
   </ion-content>
 
