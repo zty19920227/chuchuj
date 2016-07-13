@@ -1,0 +1,105 @@
+@charset "UTF-8";
+html{
+  font-size: 100px;
+}
+#my{
+  width: 100%;
+  .my-header{
+    width: 100%;
+    height: 1.65rem;
+    background: #ff5d74;
+    .setting{
+      border-bottom: 0;
+      background: #ff5d74;
+      i{
+        width: .20rem;
+        font-size: .20rem;
+        padding-top: .12rem .16rem;
+        color: #ccc;
+      }
+    }
+    .pic{
+      text-align: center;
+      padding-top: 8%;
+      img{
+        width: .6rem;
+        border-radius: 50%;
+      }
+    }
+    .anjian{
+      text-align: center;
+      color: #fff;
+      .jian{
+        border-radius: .1rem;
+        width: .60rem;
+        height: .26rem;
+        margin: 0 .13rem;
+        color: #000;
+      }
+    }
+  }
+  .h1{
+    width: 100%;
+    height: .90rem;
+    border-bottom: .06rem solid #f4f4f4;
+    .active{
+      display: flex;
+      padding-top: .1rem;
+      li{
+        flex: 1;
+        height: .68rem;
+        text-align: center;
+        p{
+          color: #7b7b7b;
+        }
+      }
+    }
+  }
+  .list{
+    width: 100%;
+    .kong{
+      border-bottom: .06rem solid #f4f4f4;
+    }
+    .item{
+      border: 0;
+      margin: 0 0.01rem;
+    }
+    .wrap{
+      height:.4rem;
+      b{
+        line-height: .12rem;
+        font-size: .12rem;
+        font-weight: normal;
+      }
+      i{
+        font-size: .24rem;
+      }
+    }
+    .wrap2{
+      border-bottom: .01rem solid #f4f4f4;
+      height: .4rem;
+      span{
+        line-height: .12rem;
+        font-size: .12rem;
+        margin-right: 1.9rem;
+      }
+      .sex{
+        .track{
+          text-align: center;
+          width: .38rem;
+          height: .22rem;
+        }
+        .handle{
+          width: .2rem;
+          height: .2rem;
+        }
+      }
+    }
+    .wrap3{
+      border-bottom: .01rem solid #f4f4f4;
+    }
+
+
+  }
+
+}
